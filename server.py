@@ -20,7 +20,8 @@ class VendingMachine:
             Item('Soda', 1.50, 10),
             Item('Chips', 1.00, 15),
             Item('Candy', 0.75, 20),
-            Item('Gum', 0.50, 30)
+            Item('Gum', 0.50, 30),
+            Item('Tooth Paste', 2.00, 10)
         ]
 
     def get_items(self):
