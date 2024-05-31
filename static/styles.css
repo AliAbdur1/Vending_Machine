@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+ul.list-group {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.card {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.btn {
+    display: block;
+    width: 100px;
+    margin: 20px auto;
+}
+
+.container {
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+
