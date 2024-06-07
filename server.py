@@ -33,6 +33,13 @@ class VendingMachine:
             if item.name == name:
                 return item
         return None
+    
+    def restock_item(self, name, quantity):
+        item = self.get_item(name)
+        if item:
+            item.quantity += quantity
+            return item
+        return None
 
 vending_machine = VendingMachine()
 
@@ -65,6 +72,19 @@ def view_cart():
 def checkout():
     session.pop('cart', None)
     return render_template('checkout.html')
+
+@app.route('/restock_item/<name>', methods=['GET', 'POST'])
+def restock_item(name):
+    item = vending_machine.get_item(name)
+    if item:
+        if request.method == 'POST':
+            quantity = int(request.form.get('quantity'))
+            vending_machine.restock_item(name, quantity)
+            return redirect(url_for('index'))
+        return render_template('restock_item.html', item=item)
+    else:
+        return redirect(url_for('page_not_found', e=404))
+
 
 @app.errorhandler(404)
 def page_not_found(e):
